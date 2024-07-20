@@ -27,3 +27,25 @@ void	send_sig(pid_t pid, char c)
 		i++;
 	}
 }
+
+int	main(int argc, char *argv[])
+{
+	pid_t	pid;
+	char	*str;
+
+	if (argc != 3)
+	{
+		ft_printf("Usage: %s <pid> <string> \n", argv[0]);
+		return (1);
+	}
+	pid = ft_atoi(argv[1]);
+	str = argv[2];
+	while (*str)
+	{
+		send_sig(pid, *str);
+		str++;
+	}
+	send_sig(pid, '\n');
+	send_sig(pid, '\n');
+	return (0);
+}
