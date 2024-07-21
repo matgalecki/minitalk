@@ -21,6 +21,14 @@
 # include <sys/types.h>
 # include <unistd.h>
 
+typedef struct State
+{
+	int	c;
+	int	i;
+}		t_State;
+
 void	send_sig(pid_t pid, char c);
+void	sig_user1(int sig);
+void	sig_user2(int sig);
 
 #endif
